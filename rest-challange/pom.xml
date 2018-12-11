@@ -9,5 +9,61 @@
   	<artifactId>google-cloud-datastore</artifactId>
   	<version>1.55.0</version>
 	</dependency>
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-testing -->
+	<dependency>
+   	 	<groupId>com.google.appengine</groupId>
+    	<artifactId>appengine-testing</artifactId>
+    	<version>1.9.25</version>
+    	<scope>test</scope>
+    </dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk -->
+	<dependency>
+    	<groupId>com.google.appengine</groupId>
+    	<artifactId>appengine-api-1.0-sdk</artifactId>
+    	<version>1.9.25</version>
+    	<scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage -->
+	<dependency>
+    	<groupId>com.google.cloud</groupId>
+    	<artifactId>google-cloud-storage</artifactId>
+    	<version>1.40.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-stubs -->
+	<dependency>
+    	<groupId>com.google.appengine</groupId>
+    	<artifactId>appengine-api-stubs</artifactId>
+    	<version>1.9.25</version>
+    	<scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-labs -->
+	<dependency>
+    	<groupId>com.google.appengine</groupId>
+    	<artifactId>appengine-api-labs</artifactId>
+    	<version>1.9.25</version>
+	</dependency>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+    
 </dependencies>
 </project>
