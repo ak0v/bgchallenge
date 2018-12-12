@@ -2,12 +2,14 @@ package com.bg.restchallange.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties
 public class Price {
 
-	private Float value;
+	private String value;
 	private LocalDateTime timestamp;
 
-	public Price(Float value, LocalDateTime timestamp) {
+	public Price(String value, LocalDateTime timestamp) {
 		super();
 		this.value = value;
 		this.timestamp = timestamp;
@@ -22,10 +24,10 @@ public class Price {
 	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
-	public Float getValue() {
+	public String getValue() {
 		return value;
 	}
-	public void setValue(Float value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 }

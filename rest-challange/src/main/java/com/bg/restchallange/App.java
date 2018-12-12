@@ -1,6 +1,7 @@
 package com.bg.restchallange;
 
 import com.bg.restchallange.model.Company;
+import com.bg.restchallange.service.IEXComponent;
 import com.bg.restchallange.service.IEXConsumerService;
 import com.bg.restchallange.service.MethodType;
 import com.bg.restchallange.service.RestRequest;
@@ -16,9 +17,9 @@ public class App {
 
 	public static void main(String[] args) {
 
-		IEXConsumerService service = new IEXConsumerService();
+		IEXComponent service = new IEXComponent();
 		
-		Company cmp = service.getCompanyResponse("AAPL");
+		Company cmp = service.getCompanies();
 		
 		System.out.println(cmp.getCompanyName());
 		
