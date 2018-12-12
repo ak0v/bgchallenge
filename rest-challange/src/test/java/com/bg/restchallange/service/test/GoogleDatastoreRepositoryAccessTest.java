@@ -2,8 +2,8 @@ package com.bg.restchallange.service.test;
 import static com.google.appengine.api.datastore.FetchOptions.Builder.withLimit;
 import static org.junit.Assert.assertEquals;
  
-import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
@@ -12,7 +12,7 @@ import com.google.appengine.api.datastore.Query;
 
 public class GoogleDatastoreRepositoryAccessTest extends GoogleDatastoreIntegrationTest {
 
-	public static final Logger logger = Logger.getLogger(GoogleDatastoreRepositoryAccessTest.class);
+	public static final org.slf4j.Logger logger = LoggerFactory.getLogger(GoogleDatastoreRepositoryAccessTest.class);
 	
 	@Test
 	public void doTestAccessToGoogleDatastore(){
