@@ -3,6 +3,7 @@ package com.bg.restchallange.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -15,13 +16,20 @@ public class IEXComponent {
 	
 	RestTemplate restTemplate = new RestTemplate();
 	
+	@Value("${predefined.symbols}")
+	String[] symbols;
+	
 	@Autowired
 	GoogleDatastoreTemplate template;
 	
+	 
 	@Scheduled(fixedRate=5000)
 	public void getIAXData(){
-		getCompanies("AAPL");
-		getPrice("AAPL");
+		for(String symbol : symbols){
+		logger.info(String.format("Running services for: '%s'",symbol));
+		getCompanies(symbol);
+		getPrice(symbol);
+		}
 	}
 	
 	public void getCompanies(String symbol){
