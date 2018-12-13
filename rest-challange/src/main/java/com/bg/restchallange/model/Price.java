@@ -30,4 +30,10 @@ public class Price {
 	public void setValue(String value) {
 		this.value = value;
 	}
+	
+	@Override
+	public String toString() {
+		return "Price [value=" + value + ", timestamp=" + timestamp + "]";
+	}
+
 }

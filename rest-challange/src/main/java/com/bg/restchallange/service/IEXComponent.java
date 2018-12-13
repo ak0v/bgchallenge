@@ -23,23 +23,23 @@ public class IEXComponent {
 	GoogleDatastoreTemplate template;
 	
 	 
-	@Scheduled(fixedRate=5000)
+	@Scheduled(fixedRate=500000)
 	public void getIAXData(){
 		for(String symbol : symbols){
 		logger.info(String.format("Running services for: '%s'",symbol));
-		getCompanies(symbol);
-		getPrice(symbol);
+		fetchCompanies(symbol);
+		fetchPrice(symbol);
 		}
 	}
 	
-	public void getCompanies(String symbol){
+	public void fetchCompanies(String symbol){
 		Company cmp = restTemplate.getForObject("https://api.iextrading.com/1.0/stock/{symbol}/company", Company.class,symbol);
 		logger.info("Company fetched:" + cmp.getCompanyName());
 		template.persistCompany(cmp);
 	}
 	
 	
-	public void getPrice(String symbol){
+	public void fetchPrice(String symbol){
 		String price = restTemplate.getForObject("https://api.iextrading.com/1.0/stock/{symbol}/price", String.class,symbol);
 		logger.info("Price fetched:" + price);
 		template.persistPriceData(price, symbol);
