@@ -2,9 +2,50 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.bp.bpinterview</groupId>
   <artifactId>rest-challange</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-   
-  
+  <packaging>jar</packaging>
+  <version>0.0.2-SNAPSHOT</version>
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>2.0.3.RELEASE</version>
+  	<relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <build>
+  <plugins>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.bg.restchallange.Application</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin> 
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                   <configuration>
+       				 <classifier>spring-boot</classifier> 
+        			  <archive>
+                        <manifest>
+                            <mainClass>com.bg.restchallange.Application</mainClass>
+                        </manifest>
+                    </archive>
+      			   </configuration>
+            </plugin>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>1.4.9</version>
+            <configuration>
+                <repository>dockplugin/${project.artifactId}</repository>
+            </configuration>
+        </plugin> 
+  </plugins>
+</build>
   <dependencies>
   	<dependency>
   	<groupId>com.google.cloud</groupId>
